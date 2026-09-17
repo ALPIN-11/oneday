@@ -1,0 +1,320 @@
+    html { scroll-behavior: smooth; }
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: rgb(0, 0, 59);
+    background-attachment: fixed;
+    color: #333;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+    background: linear-gradient(135deg, #1c1d1d, #0a5f97, #1c1d1d);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header .logo { font-size: 1.4rem; font-weight: bold; color: var(--warna-utama); }
+    header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    }
+    header nav a:hover { font-size: 0.95rem; }
+
+    /* ===== LAYOUT: SIDEBAR + KONTEN ===== */
+    .container { display: flex; flex: 1; }
+
+    aside.sidebar {
+    width: 240px;
+    background:  #0f172a;
+    border-right: 1px solid #e2e8f0;
+    padding: 1.5rem 1rem;
+    }
+    aside.sidebar h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 1rem;
+    }
+    aside.sidebar ul { list-style: none; }
+    aside.sidebar ul li { margin-bottom: 0.5rem; }
+    aside.sidebar ul li a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+    }
+    aside.sidebar ul li a:hover,
+    aside.sidebar ul li a.active {
+    background-color: rgba(255,255,255,0.15);
+    color: #fff;
+    font-weight: 600;
+    }
+
+    main.content { flex: 1; padding: 2rem; }
+
+    /* ===== SECTION SETIAP HALAMAN ===== */
+    section {
+    min-height: 100vh;
+    padding: 40px;
+    }
+
+    /* --- Kartu di section HOME --- */
+    .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+    }
+    .cards-grid .card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .cards-grid .card h2 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1e293b; }
+    .cards-grid .card p { font-size: 0.9rem; color: #64748b; line-height: 1.5; }
+
+    #biodata .bio-container { max-width: 1100px; margin: 0 auto; }
+
+    #biodata .bio-grid {
+    display: grid;
+    grid-template-columns: 700px;
+    gap: 24px;
+    justify-content: center;
+    }
+
+    #biodata .bio-card {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 32px;
+    }
+
+    .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 75px;
+    }
+
+    .hero-text {
+    text-align: left;
+    color: white;
+    flex: 1;
+    max-width: 65%;
+    }
+
+    .hero-eyebrow {
+    text-align: left;
+    font-size: 18px;
+    margin: 0;
+    color: white;
+    }
+
+    .hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    }
+
+    .hero-highlight {
+    color : cyan;
+    }
+
+    .hero-desc {
+    font-size: 20px;
+    color: white;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    }
+
+    .hero-poto {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    }
+
+    .hero-poto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    #biodata .bio-title h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    }
+
+    #biodata .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+    }
+    #biodata .status-card h3 {
+    margin: 0 0 24px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+    #biodata .status-card h3 .icon {
+    font-style: italic;
+    color: #4a8f96;
+    font-weight: 400;
+    font-size: 16px;
+    }
+    #biodata .progress-item { margin-bottom: 18px; }
+
+    #biodata .progress-item:last-child { margin-bottom: 0; }
+
+    #biodata .p-label { font-size: 14px; margin-bottom: 8px; }
+
+    #biodata .progress-track {
+    background: #e3e7ec;
+    border-radius: 4px;
+    height: 6px;
+    width: 100%;
+    overflow: hidden;
+    }
+    #biodata .progress-fill { background: #3f7ff2; height: 100%; border-radius: 4px; }
+
+    @media (max-width: 800px) {
+    #biodata .bio-grid, #biodata .status-grid { grid-template-columns: 1fr; }
+    }
+
+    /* --- Section GALERI --- */
+    #galeri .gal-master { max-width: 950px; margin: 0 auto; }
+
+    #galeri .hsatu {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    #galeri .gridpola {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 30px;
+    justify-content: center;
+    padding: 20px 0;
+    }
+
+    #galeri .polaroid {
+    background: white;
+    padding: 14px 14px 40px 14px;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    width: 200px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #galeri .polaroid:hover {
+    transform: rotate(0deg) scale(1.08) !important;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.5);
+    z-index: 10;
+    }
+
+    #galeri .polaroid img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    background: #ccc;
+    }
+
+    #galeri .sepan {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    font-family: cursive;
+    }
+
+    /* --- Section KONTAK --- */
+    #kontak .kontak-section { max-width: 640px; margin: 0 auto; padding: 32px 0px; }
+
+    #kontak .kontak-eyebrow {
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: cyan;
+    font-weight: 600;
+    margin: 0 0 12px;
+    }
+
+    #kontak .kontak-header {position: relative; left: -175px;}
+    #kontak .kontak-header h1 { font-size: 30px; line-height: 1.2; margin-bottom: 80px; font-weight: 600; }
+    #kontak .kontak-info { display: flex; flex-direction: column; gap: 16px; }
+
+    #kontak .info-card {
+    background: #fff;
+    border: 1px solid #E4E2DC;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    }
+
+    #kontak .info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #E7EFEC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+    }
+
+    #kontak .info-text .label { font-weight: 600; font-size: 14px; margin: 0 0 2px; }
+
+    #kontak .info-text .value { font-size: 13px; color: #6B6A66; margin: 0; line-height: 1.5; }
+
+    /* ===== FOOTER ===== */
+    footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+    .container { flex-direction: column; }
+    aside.sidebar { width: 100%; border-right: none; border-bottom: 1px solid #e2e8f0; }
+    }
